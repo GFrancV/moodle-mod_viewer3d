@@ -16,10 +16,34 @@ jobs:
       - name: Checkout plugin code
         uses: actions/checkout@v2
 
+      - name: Checkout Moodle core 4.4
+        run: |
+          git clone --depth 1 --branch MOODLE_404_STABLE https://github.com/moodle/moodle.git moodle
+
+      - name: Copy plugin into Moodle core
+        run: |
+          mkdir -p moodle/mod
+          rsync -av --exclude='.git' --exclude='moodle' ./ moodle/mod/viewer3d/
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.11.0'
+
+      - name: Install npm dependencies for Moodle
+        working-directory: moodle
+        run: |
+          npm install
+
+      - name: Build AMD for plugin
+        working-directory: moodle
+        run: |
+          npx grunt amd --root=mod/viewer3d --force
+
       - name: Prepare release zip
         run: |
           mkdir -p release/viewer3d
-          rsync -av --exclude-from='.rsync-exclude' . release/viewer3d/
+          rsync -av --exclude-from='.rsync-exclude' moodle/mod/viewer3d/ release/viewer3d/
           cd release
           zip -r mod_viewer3d_${{ github.ref_name }}.zip viewer3d
           cd ..
