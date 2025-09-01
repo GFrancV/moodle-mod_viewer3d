@@ -26,9 +26,11 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['downloadmodel'] = 'Download 3D Model';
+$string['errorloadingstl'] = 'Error loading STL 3D model';
 $string['modulename'] = '3D Viewer';
 $string['modulename_help'] = 'The 3D Viewer module allows teachers to upload and display 3D models in STL format that students can rotate and zoom.';
 $string['modulenameplural'] = '3D Viewers';
+$string['nofoundstl'] = 'No STL file found';
 $string['pluginadministration'] = '3D Viewer administration';
 $string['pluginname'] = '3D Viewer';
 $string['privacy:metadata'] = 'The 3D Viewer plugin does not store any personal data.';

@@ -26,9 +26,11 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['downloadmodel'] = 'Descarregar modelo 3D';
+$string['errorloadingstl'] = 'Erro ao carregar o modelo 3D STL';
 $string['modulename'] = 'Visualizador 3D';
 $string['modulename_help'] = 'O módulo Visualizador 3D permite aos professores carregar e exibir modelos 3D em formato STL que os alunos podem rodar e ampliar.';
 $string['modulenameplural'] = 'Visualizadores 3D';
+$string['nofoundstl'] = 'Nenhum ficheiro STL encontrado';
 $string['pluginadministration'] = 'Administração do Visualizador 3D';
 $string['pluginname'] = 'Visualizador 3D';
 $string['privacy:metadata'] = 'O plugin Visualizador 3D não armazena quaisquer dados pessoais.';
