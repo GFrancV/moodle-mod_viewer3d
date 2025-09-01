@@ -18,16 +18,16 @@ jobs:
 
       - name: Prepare release zip
         run: |
-          mkdir -p release/utad
-          rsync -av --exclude-from='.rsync-exclude' . release/utad/
+          mkdir -p release/viewer3d
+          rsync -av --exclude-from='.rsync-exclude' . release/viewer3d/
           cd release
-          zip -r utad.zip utad
+          zip -r mod_viewer3d_${{ github.ref_name }}.zip viewer3d
           cd ..
 
       - name: Publish release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: release/utad.zip
+          files: release/mod_viewer3d_${{ github.ref_name }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
