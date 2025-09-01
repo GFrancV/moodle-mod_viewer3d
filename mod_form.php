@@ -72,13 +72,16 @@ class mod_viewer3d_mod_form extends moodleform_mod {
       * @param array $default_values
       */
     public function data_preprocessing(&$defaultvalues) {
-        // Process the STL file.
-        if (!empty($defaultvalues['instance'])) {
-            $draftitemid = file_get_submitted_draft_itemid('stlfile');
-            file_prepare_draft_area($draftitemid, $this->context->id, 'viewer3d', 'stlfile', 0,
-                ['subdirs' => 0, 'maxfiles' => 1]);
-            $defaultvalues['stlfile'] = $draftitemid;
-        }
+        $draftitemid = file_get_submitted_draft_itemid('stlfile');
+        file_prepare_draft_area(
+        $draftitemid,
+        $this->context->id,
+        'mod_viewer3d',
+        'stlfile',
+        0,
+        ['subdirs' => 0, 'maxfiles' => 1]
+        );
+        $defaultvalues['stlfile'] = $draftitemid;
     }
 
     /**
