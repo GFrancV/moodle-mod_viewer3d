@@ -26,7 +26,6 @@ require_once($CFG->dirroot . '/mod/viewer3d/backup/moodle2/backup_viewer3d_steps
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class backup_viewer3d_activity_task extends backup_activity_task {
-
     /**
      * No specific settings for this activity
      */
@@ -52,11 +51,11 @@ class backup_viewer3d_activity_task extends backup_activity_task {
         $base = preg_quote($CFG->wwwroot, "/");
 
         // Link to the list of viewer3ds.
-        $search = "/(".$base."\/mod\/viewer3d\/index.php\?id\=)([0-9]+)/";
+        $search = "/({$base}\/mod\/viewer3d\/index.php\?id\=)([0-9]+)/";
         $content = preg_replace($search, '$@VIEWER3DINDEX*$2@$', $content);
 
         // Link to viewer3d view by moduleid.
-        $search = "/(".$base."\/mod\/viewer3d\/view.php\?id\=)([0-9]+)/";
+        $search = "/({$base}\/mod\/viewer3d\/view.php\?id\=)([0-9]+)/";
         $content = preg_replace($search, '$@VIEWER3DVIEWBYID*$2@$', $content);
 
         return $content;

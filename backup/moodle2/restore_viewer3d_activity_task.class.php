@@ -26,7 +26,6 @@ require_once($CFG->dirroot . '/mod/viewer3d/backup/moodle2/restore_viewer3d_step
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class restore_viewer3d_activity_task extends restore_activity_task {
-
     /**
      * Define (add) particular settings this activity can have
      */
