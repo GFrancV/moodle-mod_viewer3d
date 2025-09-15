@@ -22,7 +22,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class backup_viewer3d_activity_structure_step extends backup_activity_structure_step {
-
     /**
      * Backup structure
      */
@@ -31,8 +30,11 @@ class backup_viewer3d_activity_structure_step extends backup_activity_structure_
         // To know if we are including userinfo.
         $userinfo = $this->get_setting_value('userinfo');
 
-        $viewer3d = new backup_nested_element('viewer3d', ['id'],
-            ['course', 'name', 'intro', 'introformat', 'stlfile', 'timecreated', 'timemodified']);
+        $viewer3d = new backup_nested_element(
+            'viewer3d',
+            ['id'],
+            ['course', 'name', 'intro', 'introformat', 'stlfile', 'timecreated', 'timemodified']
+        );
 
         // Define sources.
         $viewer3d->set_source_table('viewer3d', ['id' => backup::VAR_ACTIVITYID]);

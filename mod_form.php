@@ -26,7 +26,6 @@ require_once($CFG->dirroot . '/course/moodleform_mod.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class mod_viewer3d_mod_form extends moodleform_mod {
-
     /**
      * Defines forms elements
      */
@@ -69,17 +68,17 @@ class mod_viewer3d_mod_form extends moodleform_mod {
      /**
       * Prepares the form before data are set.
       *
-      * @param array $default_values
+      * @param array $defaultvalues The default values of the form
       */
     public function data_preprocessing(&$defaultvalues) {
         $draftitemid = file_get_submitted_draft_itemid('stlfile');
         file_prepare_draft_area(
-        $draftitemid,
-        $this->context->id,
-        'mod_viewer3d',
-        'stlfile',
-        0,
-        ['subdirs' => 0, 'maxfiles' => 1]
+            $draftitemid,
+            $this->context->id,
+            'mod_viewer3d',
+            'stlfile',
+            0,
+            ['subdirs' => 0, 'maxfiles' => 1]
         );
         $defaultvalues['stlfile'] = $draftitemid;
     }

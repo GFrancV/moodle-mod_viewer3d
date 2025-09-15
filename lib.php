@@ -174,7 +174,7 @@ function viewer3d_get_file_info($browser, $areas, $course, $cm, $context, $filea
  * @param array $options Additional options affecting the file serving
  * @return bool False if file not found, does not return if found - just sends the file
  */
-function viewer3d_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options=[]) {
+function viewer3d_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = []) {
     if ($context->contextlevel != CONTEXT_MODULE) {
         return false;
     }
@@ -187,7 +187,7 @@ function viewer3d_pluginfile($course, $cm, $context, $filearea, $args, $forcedow
 
     $itemid = array_shift($args);
     $filename = array_pop($args);
-    $filepath = $args ? '/'.implode('/', $args).'/' : '/';
+    $filepath = $args ? '/' . implode('/', $args) . '/' : '/';
 
     $fs = get_file_storage();
     $file = $fs->get_file($context->id, 'mod_viewer3d', $filearea, $itemid, $filepath, $filename);
