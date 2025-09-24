@@ -1,0 +1,11 @@
+
+<?xml version="1.0"?>
+<libraries>
+  <library>
+    <location>js/threejs</location>
+    <name>Three.js</name>
+    <license>MIT</license>
+    <version>0.132.2</version>
+    <repository>https://github.com/mrdoob/three.js</repository>
+  </library>
+</libraries>
