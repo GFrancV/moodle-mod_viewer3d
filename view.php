@@ -83,9 +83,10 @@ $candownload = has_capability('mod/viewer3d:download', $context);
 echo $OUTPUT->header();
 
 // Three.js library and extensions.
-echo '<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>';
-echo '<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/STLLoader.js"></script>';
-echo '<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>';
+$dir = new moodle_url('/mod/viewer3d');
+echo "<script src='{$dir}/js/threejs/three.min.js'></script>";
+echo "<script src='{$dir}/js/threejs/STLLoader.js'></script>";
+echo "<script src='{$dir}/js/threejs/OrbitControls.js'></script>";
 
 $contextdata = [
     'stlurl' => $stlurl,
