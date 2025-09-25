@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component    = 'mod_viewer3d';
-$plugin->release      = '0.2.2';
-$plugin->version      = 2025091500;
+$plugin->release      = '0.2.3';
+$plugin->version      = 2025092511;
 $plugin->requires     = 2023042400;
 $plugin->maturity     = MATURITY_STABLE;
